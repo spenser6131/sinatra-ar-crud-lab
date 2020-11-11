@@ -1,0 +1,10 @@
+<form action="/articles/new" method="get">
+<button type="submit">Create new article</button>
+</form><br>
+<% @articles.each do |article| %>
+<a style="font-size: 25" href="/articles/<%= article.id %>"><%= article.title %></a>
+<p><%= article.content %></p>
+<form action="/articles/<%= article.id %>/edit" method="get">
+<button type ="submit">Edit this article</button>
+</form><br>
+<% end %>
